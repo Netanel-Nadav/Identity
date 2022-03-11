@@ -3,8 +3,8 @@
 }
 
 html {
-    font-family: robotoLight, sans-serif;
-    line-height: 2;
+    font-family: oswald, sans-serif;
+    line-height: 1.3;
     color: $clr5;
 }
 
@@ -20,7 +20,7 @@ img {
 }
 
 a{
-    font-family: robotoBold, sans-serif;
+    font-family: oswaldBold, sans-serif;
     text-decoration: none;
     color: inherit;
 }
@@ -28,4 +28,33 @@ a{
 h1,h2,h3,h4,h5,h6, p {
     margin: 0;
     padding: 0;
+}
+
+h1 {
+    font-family: oswaldBold, sans-serif;
+}
+
+small {
+    font-family: oswaldBold, sans-serif;
+    font-size: rem(12px);
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px 30px;
+    background-color: $clr4;
+    border-radius: 50px;
+    color: $clr1;
+    font-size: rem(12px);
+    font-family: oswald, sans-serif;
+    box-shadow: 0px 0px 10px rgba(#000, $alpha: .3);
+    transition: all .2s;
+
+    &:hover {
+        transform: scale(1.1);
+    }
 }
