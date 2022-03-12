@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export const UserPreview = ({ user }) => {
-    console.log(user);
     const { id, firstName, lastName, imgUrl, _id } = user
     return (
         <section className='user-preview flex column align-center'>
@@ -21,7 +20,3 @@ export const UserPreview = ({ user }) => {
         </section>
     )
 }
-
-
-{/* <button><i className="fas fa-trash-alt"></i></button>
-<button><i className="fas fa-edit"></i></button> */}

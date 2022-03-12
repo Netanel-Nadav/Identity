@@ -16,10 +16,12 @@
 
 // Pages
 @import "pages/HomePage";
+@import "pages/UserDetails";
 
 
 // Components
 
+@import "cmps/Modal";
 @import "cmps/UserList";
 @import "cmps/UserPreview";
 @import "cmps/navigation";

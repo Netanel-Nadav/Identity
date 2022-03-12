@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 
-
-import routes from '../routes'
 
 export function Navigation() {
 
@@ -27,7 +25,8 @@ export function Navigation() {
                     <span>Logo Here</span>
                 </div>
                 <ul className={`${isMenuOpen ? 'open' : ''} clean-list flex align-center justify-center`}>
-                    {routes.map(route => <li key={route.path} onClick={toggleMenu}><NavLink to={route.path}>{route.label}</NavLink></li>)}
+                    <li><NavLink to={'/'}>Home</NavLink></li>
+                    <li><NavLink to={'/About'}>About me</NavLink></li>
                 </ul>
             </div>
         </nav>

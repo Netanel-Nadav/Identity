@@ -6,7 +6,7 @@ import { RootCmp } from './RootCmp';
 import { BrowserRouter as Router } from 'react-router-dom'
 
 // Styles
-import main from "./assets/styles/main.scss"
+import "./assets/styles/main.scss"
 
 
 
