@@ -62,6 +62,8 @@ export const UserDetails = () => {
                 <Link to={`/add/${_id}`}><button><i className="fas fa-edit"></i></button></Link>
                 <button onClick={toggleModal}><i className="fas fa-trash"></i></button>
             </div>
+
+            l
                 {isModalOpen && <Modal onRemoveUser={onRemoveUser} isModalOpen={isModalOpen} />}
         </section>
     )
