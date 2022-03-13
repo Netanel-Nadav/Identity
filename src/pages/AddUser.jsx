@@ -10,6 +10,7 @@ export const AddUser = () => {
   const [userId, setUserId] = useState('')
   const [userFname, setUserFname] = useState('')
   const [userLname, setUserLname] = useState('')
+
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const { id } = useParams()

@@ -1,0 +1,26 @@
+.about-us {
+    .wrraper {
+        flex-direction: column;
+        margin: 25px 0;
+        gap: 30px;
+
+
+        @include for-normal-layout {
+            flex-direction: row;
+        }
+        .img-container {
+            flex-basis: 70%;
+        }
+
+        .info {
+            .info-txt {
+                margin-bottom: 10px;
+            }
+            .actions {
+                gap: 10px;
+                font-size: rem(30px);
+            }
+        }
+
+    }
+}

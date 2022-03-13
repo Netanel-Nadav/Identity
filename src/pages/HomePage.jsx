@@ -26,7 +26,6 @@ export const HomePage = (props) => {
 
 
   if (!users) return 'Loading...'
-
   return (
     <section className='home'>
       <h1>Welcome, Here is a List of the registed Users</h1>

@@ -16,5 +16,16 @@
 
     .actions {
         gap: 10px;
+        button {
+            background: unset;
+            box-shadow: unset;
+            padding: unset;
+            width: 35px;
+            height: 35px;
+            color: $clr5;
+            font-size: rem(14px);
+            border: $border;
+
+        }
     }
 }

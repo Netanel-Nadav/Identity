@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export const UserPreview = ({ user }) => {
-    const { id, firstName, lastName, imgUrl, _id } = user
+    const { id, firstName, lastName, imgUrl, _id} = user
     return (
         <section className='user-preview flex column align-center'>
 

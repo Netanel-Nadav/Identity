@@ -15,6 +15,7 @@
 
 
 // Pages
+@import "pages/AboutMe";
 @import "pages/AddUser";
 @import "pages/HomePage";
 @import "pages/UserDetails";
@@ -22,6 +23,7 @@
 
 // Components
 
+@import "cmps/FilterBy";
 @import "cmps/Modal";
 @import "cmps/UserList";
 @import "cmps/UserPreview";

@@ -9,6 +9,7 @@ import { removeUser } from '../store/actions/user.action'
 export const UserDetails = () => {
     const [user, setUser] = useState(null)
     const [isModalOpen, setIsModalOpen] = useState(false)
+    
     const { id } = useParams()
     const navigate = useNavigate();
     const dispatch = useDispatch()
@@ -56,9 +57,9 @@ export const UserDetails = () => {
                 <p>Your ID nuber is {user.id}</p>
             </div>
             <div className="actions flex">
-                <button onClick={onGoBack}>Back</button>
-                <Link to={`/add/${_id}`}><button>Edit</button></Link>
-                <button onClick={toggleModal}>Delete</button>
+                <button onClick={onGoBack}><i className="fas fa-angle-left"></i></button>
+                <Link to={`/add/${_id}`}><button><i className="fas fa-edit"></i></button></Link>
+                <button onClick={toggleModal}><i className="fas fa-trash"></i></button>
                 {isModalOpen && <Modal onRemoveUser={onRemoveUser} isModalOpen={isModalOpen} />}
             </div>
         </section>

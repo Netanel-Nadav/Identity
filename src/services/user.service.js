@@ -36,15 +36,15 @@ const gUsers = [
 
 async function query(filterBy = null) {
     let users = await storageService.query(STORAGE_KEY)
-    console.log(users);
     if (!users.length) {
-        users = gUsers
-        await storageService.postMany(STORAGE_KEY, users)
+        users = await storageService.postMany(STORAGE_KEY, gUsers)
     }
     if (filterBy) {
-        const {firstName, lastName, id} = filterBy
+        // console.log('filterBy', filterBy);
+        const { firstName, lastName, id } = filterBy
         return users.filter(user => (user.firstName.toLowerCase().includes(firstName.toLowerCase()) && user.lastName.toLowerCase().includes(lastName.toLowerCase())))
     }
+    console.log(users);
     return users
 }
 
@@ -56,12 +56,13 @@ async function getById(id) {
 async function add(newEntity) {
     const users = await storageService.query(STORAGE_KEY)
     const user = users.find(user => {
-        if (user.id === newEntity.id) throw new Error('Cannot Sign up')})
-        newEntity.imgUrl = `https://robohash.org/${newEntity.id}`
-        const newUser = await storageService.post(STORAGE_KEY, newEntity)
-        
-        return newUser
-    }
+        if (user.id === newEntity.id) throw new Error('Cannot Sign up')
+    })
+    newEntity.imgUrl = `https://robohash.org/${newEntity.id}`
+    const newUser = await storageService.post(STORAGE_KEY, newEntity)
+
+    return newUser
+}
 
 async function remove(entityId) {
     await storageService.remove(STORAGE_KEY, entityId)

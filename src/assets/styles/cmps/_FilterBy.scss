@@ -1,0 +1,14 @@
+.filter-by {
+    margin-bottom: 15px;
+    form{
+        gap: 10px;
+        width: 100%;
+        input{
+            padding: 5px;
+            border: $border;
+            font-size: rem(12px);
+            border-radius: 3px;
+            width: 100%;
+        }
+    }
+}
