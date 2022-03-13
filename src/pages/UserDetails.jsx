@@ -63,7 +63,6 @@ export const UserDetails = () => {
                 <button onClick={toggleModal}><i className="fas fa-trash"></i></button>
             </div>
 
-            l
                 {isModalOpen && <Modal onRemoveUser={onRemoveUser} isModalOpen={isModalOpen} />}
         </section>
     )
