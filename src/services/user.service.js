@@ -40,11 +40,11 @@ async function query(filterBy = null) {
         users = await storageService.postMany(STORAGE_KEY, gUsers)
     }
     if (filterBy) {
-        // console.log('filterBy', filterBy);
         const { firstName, lastName, id } = filterBy
-        return users.filter(user => (user.firstName.toLowerCase().includes(firstName.toLowerCase()) && user.lastName.toLowerCase().includes(lastName.toLowerCase())))
+        return users.filter(user => (user.id.toString().includes(id)
+        && user.firstName.toLowerCase().includes(firstName.toLowerCase())
+        && user.lastName.toLowerCase().includes(lastName.toLowerCase())))
     }
-    console.log(users);
     return users
 }
 

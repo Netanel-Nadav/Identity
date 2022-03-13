@@ -42,6 +42,7 @@ export function updateUser(userToUpdae) {
             const updatedUser = await userService.update(userToUpdae)
             const action = {type: 'UPDATE_USER', updatedUser}
             dispatch(action)
+            return updatedUser
         } catch (err) {
             console.log('Coulden\'t update user', err);
         }

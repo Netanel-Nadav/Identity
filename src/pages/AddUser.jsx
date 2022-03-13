@@ -34,7 +34,7 @@ export const AddUser = () => {
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
-    
+
     const userToAdd = {
       id: +userId,
       firstName: userFname,
@@ -44,23 +44,26 @@ export const AddUser = () => {
     if (user) {
       const userToUpdate = user;
       userToUpdate.firstName = userFname;
-      userToUpdate.lastName =  userLname;
-      dispatch(updateUser(userToUpdate))
+      userToUpdate.lastName = userLname;
+      await dispatch(updateUser(userToUpdate))
+      navigate('/')
 
-    } else dispatch(addUser(userToAdd))
-    navigate('/')
+    } else {
+      await dispatch(addUser(userToAdd))
+      navigate('/')
+    }
   }
 
   return (
     <section className="add-user">
       <form onSubmit={handleSubmit} className="flex align-center justify-center column">
 
-         {id && <label className='flex column'>
+        {id && <label className='flex column'>
           <span>Enter your Id:</span>
           <input type="number" disabled placeholder='Enter your ID' value={userId} onChange={(ev) => setUserId(ev.target.value)} />
         </label>}
-        
-         {!id && <label className='flex column'>
+
+        {!id && <label className='flex column'>
           <span>Enter your Id:</span>
           <input type="number" placeholder='Enter your ID' value={userId} onChange={(ev) => setUserId(ev.target.value)} />
         </label>}

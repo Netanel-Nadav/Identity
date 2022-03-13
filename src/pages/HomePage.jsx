@@ -16,7 +16,7 @@ export const HomePage = (props) => {
 
 
   useEffect(() => {
-    if (!users) dispatch(loadUsers())
+    if (!users) dispatch(loadUsers(filterBy))
   }, [])
 
 
