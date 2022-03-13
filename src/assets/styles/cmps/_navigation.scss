@@ -17,6 +17,10 @@ nav {
 
     &.open {
       display: block;
+
+      @include for-normal-layout {
+        display: none;
+      }
     }
   }
 
@@ -63,7 +67,23 @@ nav {
 
 
     li {
-      margin-inline-end: 10px;
+      @include for-normal-layout {
+        margin-inline-end: 10px;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+      }
+
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        line-height: 65px;
+
+        &.active {
+          box-shadow: inset 0px -4px 0px $clr1;
+        }
+      }
     }
   }
 }

@@ -1,30 +1,37 @@
 import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { FilterBy } from '../components/FilterBy'
 import { UsersList } from '../components/UsersList'
-import { userService } from '../services/user.service'
+import { loadUsers } from '../store/actions/user.action'
 
-export function HomePage() {
+export const HomePage = (props) => {
 
-  const [users, setUsers] = useState(null)
-  const [filterBy, setFilterBy] = useState(null)
+  const { users } = useSelector(state => state.userModule)
+  const [filterBy, setFilterBy] = useState({
+    firstName: '',
+    lastName: '',
+    id: 0
+  })
+  const dispatch = useDispatch()
+
 
   useEffect(() => {
-    loadUsers(filterBy)
+    if (!users) dispatch(loadUsers())
+  }, [])
+
+
+  useEffect(() => {
+    dispatch(loadUsers(filterBy))
   }, [filterBy])
-  
 
-  const loadUsers = async (filterBy) => {
-    const users = await userService.query(filterBy)
-    setUsers(users)
-  }
 
-  
   if (!users) return 'Loading...'
+
   return (
-      <section className='home'>
-          <h1>Welcome, Here is a List of the registed Users</h1>
-          <FilterBy setFilterBy={setFilterBy}/>
-          <UsersList users={users} />
-      </section>
+    <section className='home'>
+      <h1>Welcome, Here is a List of the registed Users</h1>
+      <FilterBy setFilterBy={setFilterBy} />
+      <UsersList users={users} />
+    </section>
   );
 }

@@ -4,17 +4,22 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import { RootCmp } from './RootCmp';
 import { BrowserRouter as Router } from 'react-router-dom'
+import { Provider } from 'react-redux';
+import { store } from './store';
 
 // Styles
 import "./assets/styles/main.scss"
 
 
 
+
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <RootCmp />
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <RootCmp />
+      </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

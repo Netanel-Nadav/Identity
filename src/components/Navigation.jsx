@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 
 export function Navigation() {
@@ -21,12 +21,14 @@ export function Navigation() {
                     <span></span>
                     <span></span>
                 </div>
-                <div className='logo-container'>
-                    <span>Logo Here</span>
-                </div>
+                <Link to={'/'}>
+                    <div className='logo-container'>
+                        <span>Logo Here</span>
+                    </div>
+                </Link>
                 <ul className={`${isMenuOpen ? 'open' : ''} clean-list flex align-center justify-center`}>
-                    <li><NavLink to={'/'}>Home</NavLink></li>
-                    <li><NavLink to={'/About'}>About me</NavLink></li>
+                    <li onClick={toggleMenu}><NavLink to={'/'}>Home</NavLink></li>
+                    <li onClick={toggleMenu}><NavLink to={'/About'}>About me</NavLink></li>
                 </ul>
             </div>
         </nav>

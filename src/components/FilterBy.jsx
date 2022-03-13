@@ -12,6 +12,7 @@ export const FilterBy = ({ setFilterBy }) => {
         <form>
             <input type="text" placeholder='Search By First name' name='firstName' onChange={handleChange} />
             <input type="text" placeholder='Search By Last name' name='lastName' onChange={handleChange} />
+            <input type="number" placeholder='Search By ID' name='id' onChange={handleChange} />
         </form>
     )
 }

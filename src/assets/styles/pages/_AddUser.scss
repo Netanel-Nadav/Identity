@@ -1,0 +1,21 @@
+.add-user {
+    height: 100%;
+    form {
+        label {
+            width: 70%;
+            margin-bottom: 15px;
+            span {
+                font-size: rem(14px);
+            }
+            input {
+                padding: 7px 20px;
+                border: $border;
+                border-radius: 3px;
+            }
+        }
+        button {
+            width: 30%;
+            margin: 0 auto;
+        }
+    }
+}
