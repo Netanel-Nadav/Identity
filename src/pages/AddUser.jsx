@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { userService } from '../services/user.service'
-import { addUser, updateUser } from '../store/actions/user.action'
+import { addUser, setMsg, updateUser } from '../store/actions/user.action'
 
 export const AddUser = () => {
 
@@ -45,9 +45,13 @@ export const AddUser = () => {
       const userToUpdate = user;
       userToUpdate.firstName = userFname;
       userToUpdate.lastName = userLname;
+      if (!userToUpdate.firstName || !userToUpdate.firstName) {
+        dispatch(setMsg('error', 'Cant update empty name'))
+        return
+      }
       await dispatch(updateUser(userToUpdate))
       navigate('/')
-
+      
     } else {
       await dispatch(addUser(userToAdd))
       navigate('/')

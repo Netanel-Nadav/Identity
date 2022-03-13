@@ -1,7 +1,8 @@
 
 
 const initialState = {
-    users: null
+    users: null,
+    userMsg: null
 }
 
 
@@ -27,6 +28,11 @@ export function userReducer(state = initialState, action) {
             return {
                 ...state,
                 users: state.users.map(user => (user.id === action.updatedUser.id ? action.updatedUser : user))
+            }
+        case 'SET_MSG':
+            return {
+                ...state,
+                userMsg: action.msg
             }
         default:
             return state

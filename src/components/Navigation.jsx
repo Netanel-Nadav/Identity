@@ -23,7 +23,7 @@ export function Navigation() {
                 </div>
                 <Link to={'/'}>
                     <div className='logo-container'>
-                        <span>Logo Here</span>
+                        <span>Identity</span>
                     </div>
                 </Link>
                 <ul className={`${isMenuOpen ? 'open' : ''} clean-list flex align-center justify-center`}>

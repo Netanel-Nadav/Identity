@@ -4,7 +4,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Modal } from '../components/Modal'
 
 import { userService } from '../services/user.service'
-import { removeUser } from '../store/actions/user.action'
+import { removeUser, setMsg } from '../store/actions/user.action'
 
 export const UserDetails = () => {
     const [user, setUser] = useState(null)
@@ -25,12 +25,13 @@ export const UserDetails = () => {
         setUser(user)
     }
 
-    const onRemoveUser = (ans) => {
+    const onRemoveUser = async (ans) => {
         if (ans === 'No') {
             setIsModalOpen(!isModalOpen)
         } else {
             setIsModalOpen(!isModalOpen)
-            dispatch(removeUser(id))
+            await dispatch(removeUser(id))
+            await dispatch(setMsg('sucess', 'User Deleted successfully'))
             onGoBack()
         }
     }

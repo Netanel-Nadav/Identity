@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Routes, Route } from 'react-router'
 import { Navigation } from './components/Navigation';
+import { UserMsg } from './components/UserMsg';
 import { AboutUs } from './pages/AboutUs';
 import { AddUser } from './pages/AddUser';
 import { HomePage } from './pages/HomePage';
@@ -22,6 +23,7 @@ export function RootCmp() {
           <Route path={'/add/:id'} element={<AddUser />} />
         </Routes>
       </main>
+      <UserMsg />
     </section>
   );
 }

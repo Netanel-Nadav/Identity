@@ -56,7 +56,7 @@ async function getById(id) {
 async function add(newEntity) {
     const users = await storageService.query(STORAGE_KEY)
     const user = users.find(user => {
-        if (user.id === newEntity.id) throw new Error('Cannot Sign up')
+        if (user.id === newEntity.id) throw new Error('ID is already taken')
     })
     newEntity.imgUrl = `https://robohash.org/${newEntity.id}`
     const newUser = await storageService.post(STORAGE_KEY, newEntity)

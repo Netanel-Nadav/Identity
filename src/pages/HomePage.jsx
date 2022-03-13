@@ -10,7 +10,7 @@ export const HomePage = (props) => {
   const [filterBy, setFilterBy] = useState({
     firstName: '',
     lastName: '',
-    id: 0
+    id: ''
   })
   const dispatch = useDispatch()
 
